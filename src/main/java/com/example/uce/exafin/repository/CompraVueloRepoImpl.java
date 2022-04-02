@@ -57,7 +57,7 @@ public class CompraVueloRepoImpl implements ICompraVueloRepo{
 	@Override
 	public CompraVuelo vueloPorNumero(String numVuelo) {
 		TypedQuery<CompraVuelo> myTypedQuery = (TypedQuery<CompraVuelo>) this.e
-				.createQuery("SELECT f FROM CompraVuelo f JOIN f.cliente  d WHERE f.asientos >=:num AND WHERE f.estado = 'D'",CompraVuelo.class);
+				.createQuery("SELECT f FROM CompraVuelo f JOIN f.vuelo  v WHERE v.numVuelo=:num AND v.estado = 'D'",CompraVuelo.class);
 		myTypedQuery.setParameter("num", numVuelo);
 		return myTypedQuery.getSingleResult();
 	}

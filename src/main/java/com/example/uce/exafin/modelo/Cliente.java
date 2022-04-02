@@ -25,8 +25,6 @@ public class Cliente {
 	@Column(name = "clie_nombre")
 	private String nombre;
 
-	@Column(name = "clie_tarjeta")
-	private String tarjetaCredito;
 
 	@OneToMany(mappedBy = "cliente" ,cascade = CascadeType.ALL )
 	private List<CompraVuelo> compraVuelo;

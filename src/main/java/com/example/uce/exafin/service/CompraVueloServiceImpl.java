@@ -44,4 +44,12 @@ public class CompraVueloServiceImpl implements ICompraVueloService {
 		
 	}
 
+	
+	@Override
+	public CompraVuelo vueloPorNumero(String vuelo) {
+		// TODO Auto-generated method stub
+		return this.estu.vueloPorNumero(vuelo);
+	}
+
+
 }

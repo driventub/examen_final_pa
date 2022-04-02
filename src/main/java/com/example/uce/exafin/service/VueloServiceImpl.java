@@ -50,10 +50,4 @@ public class VueloServiceImpl implements IVueloService {
 		return this.estu.buscarVuelosDisponibles(origen, destino, fechaVuelo);
 	}
 
-	@Override
-	public Vuelo vueloPorNumero(String vuelo) {
-		// TODO Auto-generated method stub
-		return this.estu.vueloPorNumero(vuelo);
-	}
-
 }

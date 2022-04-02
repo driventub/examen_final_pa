@@ -73,12 +73,6 @@ public class VueloRepoImpl implements IVueloRepo{
 		
 	}
 
-	@Override
-	public Vuelo vueloPorNumero(String vuelo) {
-		TypedQuery<Vuelo> myTypedQuery = (TypedQuery<Vuelo>) this.e
-				.createQuery("SELECT f FROM Vuelo f JOIN f.avion d WHERE f.asientos >=:num AND WHERE f.estado = 'D'",Vuelo.class);
-		myTypedQuery.setParameter("num", vuelo);
-		return myTypedQuery.getSingleResult();
-	}
+	
 
 }
