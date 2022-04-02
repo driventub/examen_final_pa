@@ -18,7 +18,8 @@ public class ClientesController {
     private IVueloService vueloService;
 
     @GetMapping("/mostrar")
-	public String buscarTodos(Model modelo) {
+	public String buscarDisponible(Model modelo) {
+		// List<Vuelo> vuelos = this.vueloService.buscarVuelosDisponibles();
 		List<Vuelo> vuelos = this.vueloService.buscarTodos();
 		modelo.addAttribute("vuelos", vuelos);
 		return "lista";

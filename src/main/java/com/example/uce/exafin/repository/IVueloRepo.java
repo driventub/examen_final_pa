@@ -12,5 +12,5 @@ public interface IVueloRepo {
 	public void eliminar(Integer id);
 	public void insertar(Vuelo e);
 	public List<Vuelo> buscarVuelosDisponibles(String origen, String destino, LocalDateTime fechaVuelo);
-	public Vuelo vueloPorNumero(String vuelo);
+	
 }

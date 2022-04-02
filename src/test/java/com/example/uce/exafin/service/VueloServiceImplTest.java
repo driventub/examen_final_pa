@@ -1,6 +1,12 @@
 package com.example.uce.exafin.service;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.Month;
+
 import javax.transaction.Transactional;
+
+import com.example.uce.exafin.modelo.Vuelo;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -23,7 +29,19 @@ public class VueloServiceImplTest {
 
     @Test
     void testVuelo(){
+        Vuelo v = new Vuelo();
         
-        // assertThat
+        v.setAsientosDisponibles(33);
+        v.setFechaVuelo(LocalDateTime.of(2022,Month.AUGUST,8,12,45));
+        v.setNumero("CAA-333");
+        v.setValorAsiento(new BigDecimal("2222.22"));
+        v.setEstado("D");
+        v.setOrigen("Marruecos");
+        v.setDestino("Pensilvania");
+
+        this.vuelo.insertar(v);
+
+        Vuelo v2 = this.vuelo.buscar(v.getId());
+        assertThat(v2.getAsientosDisponibles() , equalTo(v.getAsientosDisponibles()));
     }
 }
